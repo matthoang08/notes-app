@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint global-require: off, no-console: off */
 
 /**
@@ -84,7 +85,6 @@ const createWindow = async () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.once('ready-to-show', () => {
-
     console.log('ready to show');
 
     if (!mainWindow) {
@@ -100,7 +100,7 @@ const createWindow = async () => {
         if (mainWindow) {
           mainWindow.focus();
         }
-      }, 1000)
+      }, 1000);
     }
   });
 
