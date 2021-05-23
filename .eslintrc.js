@@ -14,6 +14,9 @@ module.exports = {
   rules: {
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
+    'prettier/prettier': 'warn',
+    // '@typescript-eslint/parser', :'warn',
+    // 'react/prop-types': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,

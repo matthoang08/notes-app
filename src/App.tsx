@@ -1,7 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  EuiButton,
+  EuiHeader,
+  EuiIcon,
+  EuiHeaderSection,
+  EuiHeaderSectionItem,
+} from '@elastic/eui';
 import icon from '../assets/icon.svg';
 import './App.global.css';
+// import '@elastic/eui/dist/eui_theme_light.css';
+import { MainContent } from './ui/components/MainContent/MainContent';
 
 const Hello = () => {
   return (
@@ -16,24 +25,24 @@ const Hello = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <button type="button">
+          <EuiButton type="button">
             <span role="img" aria-label="books">
               📚
             </span>
             Read our docs
-          </button>
+          </EuiButton>
         </a>
         <a
           href="https://github.com/sponsors/electron-react-boilerplate"
           target="_blank"
           rel="noreferrer"
         >
-          <button type="button">
+          <EuiButton type="button">
             <span role="img" aria-label="books">
               🙏
             </span>
             Donate
-          </button>
+          </EuiButton>
         </a>
       </div>
     </div>
@@ -42,10 +51,24 @@ const Hello = () => {
 
 export default function App(): JSX.Element {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" component={Hello} />
-      </Switch>
-    </Router>
+    <>
+      <EuiHeader theme="dark">
+        <EuiHeaderSection grow>
+          <EuiHeaderSectionItem border="none">
+            <EuiIcon
+              style={{ marginLeft: '10px' }}
+              size="xl"
+              type="logoWebhook"
+            />
+          </EuiHeaderSectionItem>
+          <EuiHeaderSectionItem border="none">test</EuiHeaderSectionItem>
+        </EuiHeaderSection>
+      </EuiHeader>
+      <Router>
+        <Switch>
+          <Route path="/" component={MainContent} />
+        </Switch>
+      </Router>
+    </>
   );
 }
